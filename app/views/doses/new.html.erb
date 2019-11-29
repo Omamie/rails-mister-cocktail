@@ -1,0 +1,9 @@
+<div class="container py-3">
+<h3>Create A Dose</h3>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description, error: 'Please submit a description'%>
+  <%= f.input :ingredient_id, as: :select, collection: Ingredient.all, include_blank: true %> <br/ >
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
+</div>

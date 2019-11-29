@@ -1,0 +1,29 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= image_tag ("mixtini")%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'All Cocktails', cocktails_path, class: "btn btn-ghost" %>
+      </li>
+      <li>
+      <%= link_to 'Create A Cocktail', new_cocktail_path, class: "btn btn-ghost"%>
+       </li>
+    </ul>
+  </div>
+</div>
+<div class="container py-3">
+<h1>Create A Cocktail</h1>
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, error: 'Please submit a unique name'%>
+  <%= f.button :submit, class: "btn btn-primary mt-3" %>
+<% end %>
+
+<%= link_to 'Back to list', cocktails_path, class: "btn btn-primary my-3"%>
+</div>
+
+

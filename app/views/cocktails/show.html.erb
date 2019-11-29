@@ -1,0 +1,34 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+ <%= image_tag ("mixtini") %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'All Cocktails', cocktails_path, class: "btn btn-ghost"%>
+      </li>
+      <li>
+      <%= link_to 'Create A Cocktail', new_cocktail_path, class: "btn btn-ghost"%>
+       </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container mt-3">
+<h2><%= @cocktail.name %></h2>
+
+<p><% @cocktail.doses.each do |d| %></p>
+<p>Ingredient: <%= d.ingredient.name %></p>
+<p>Amount: <%= d.description %></p>
+<%= link_to "", d, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash"%>
+<% end %>
+
+<div>
+  <%= render 'doses/form' %>
+</div>
+<br/>
+
+</div>

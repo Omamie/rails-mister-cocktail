@@ -1,0 +1,7 @@
+
+<h3>Create A Dose</h3>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :ingredient_id, as: :select, collection: Ingredient.all, include_blank: true %> <br/ >
+  <%= f.input :description, error: 'Amount'%>
+  <%= f.button :submit, 'Add Dose', class: "btn btn-ghost" %>
+<% end %>
