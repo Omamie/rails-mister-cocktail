@@ -21,9 +21,13 @@
 <h2><%= @cocktail.name %></h2>
 
 <p><% @cocktail.doses.each do |d| %></p>
-<p>Ingredient: <%= d.ingredient.name %></p>
-<p>Amount: <%= d.description %></p>
+<div class="cocktail-card">
+<div>
+<p> <strong> Ingredient:</strong>  <%= d.ingredient.name %></p>
+<p><strong> Amount:</strong> <%= d.description %></p>
+</div>
 <%= link_to "", d, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash"%>
+</div>
 <% end %>
 
 <div>
@@ -31,4 +35,9 @@
 </div>
 <br/>
 
+<div>
+
+<h3>Photos</h3>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, class: "rounded-image" %>
+</div>
 </div>

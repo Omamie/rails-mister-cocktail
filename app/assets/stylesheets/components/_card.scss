@@ -1,8 +1,12 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin-top: 16px;
+}
+
+.cocktail-card {
+  display: flex;
 }
 
 // Smallest device
